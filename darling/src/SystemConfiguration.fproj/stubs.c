@@ -4,6 +4,34 @@
 
 const CFStringRef kSCDynamicStoreUseSessionKeys = CFSTR("UseSessionKeys");
 
+CFArrayRef SCNetworkInterfaceCopyAll(void)
+{
+    // An empty collection lets callers distinguish no available interfaces
+    // from a failed enumeration while the configuration backend is absent.
+    return CFArrayCreate(kCFAllocatorDefault, NULL, 0, &kCFTypeArrayCallBacks);
+}
+
+CFStringRef SCNetworkInterfaceGetBSDName(SCNetworkInterfaceRef interface)
+{
+    return NULL;
+}
+
+CFStringRef SCNetworkInterfaceGetInterfaceType(SCNetworkInterfaceRef interface)
+{
+    return NULL;
+}
+
+SCPreferencesRef SCPreferencesCreate(CFAllocatorRef allocator, CFStringRef name,
+                                     CFStringRef prefsID)
+{
+    return NULL;
+}
+
+CFDictionaryRef SCPreferencesPathGetValue(SCPreferencesRef prefs, CFStringRef path)
+{
+    return NULL;
+}
+
 CFTypeID SCNetworkConnectionGetTypeID(void)
 {
     STUB();
